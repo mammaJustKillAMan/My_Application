@@ -4,24 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import java.text.SimpleDateFormat
-import java.util.*
-
-val Context.sessionDataStore by preferencesDataStore(name = "user_sessions")
-
-data class HikeSession(
-    val startTime: String,
-    val endTime: String,
-    val maxAltitude: Double,
-    val totalAscent: Double
-)
-
-sealed class LoggerState {
-    object Idle : LoggerState()
-    object Logging : LoggerState()
-    object Success : LoggerState()
-    data class Error(val message: String) : LoggerState()
-}
 
 class SessionLoggerViewModel(
     private val context: Context,
