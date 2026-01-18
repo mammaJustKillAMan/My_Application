@@ -107,7 +107,7 @@ fun MainScreen(
                         onClick = { loggerViewModel.startSession() },
                         enabled = !loggerViewModel.isLogging,
                         modifier = Modifier.weight(1f)
-                    ) { Text("Start Session") }
+                    ) { Text("Start Recording") }
 
                     Button(
                         onClick = { loggerViewModel.stopSession() },
