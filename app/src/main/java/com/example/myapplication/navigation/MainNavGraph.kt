@@ -70,7 +70,30 @@ fun MainNavGraph(
         }
 
         composable(MainRoute.MedicalGuide.route) {
-            MedicalGuideScreen()
+            MedicalGuideScreen(
+                sessionStateViewModel = sessionStateViewModel,
+                onBackClick = { navController.popBackStack() }
+            )
+        }
+
+        composable(MainRoute.EmergencyCall.route) {
+            val authState by authViewModel.authState.collectAsState()
+            var emergencyPhone by remember { mutableStateOf<String?>(null) }
+
+            // Load emergency contact from Firebase
+            LaunchedEffect(authState) {
+                if (authState is AuthState.Authenticated) {
+                    authViewModel.loadEmergencyContact { _, phone ->
+                        emergencyPhone = phone
+                    }
+                }
+            }
+
+            EmergencyCallScreen(
+                isLoggedIn = authState is AuthState.Authenticated,
+                emergencyContact = emergencyPhone,
+                onBackClick = { navController.popBackStack() }
+            )
         }
     }
 }
