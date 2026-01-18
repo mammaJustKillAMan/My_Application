@@ -109,12 +109,12 @@ fun MainScreen(
                         modifier = Modifier.weight(1f)
                     ) { Text("Start Session") }
 
-                Button(
-                    onClick = { loggerViewModel.stopSession() },
-                    enabled = loggerViewModel.isLogging,
-                    modifier = Modifier.weight(1f)
-                ) { Text("Stop Session") }
-            }
+                    Button(
+                        onClick = { loggerViewModel.stopSession() },
+                        enabled = loggerViewModel.isLogging,
+                        modifier = Modifier.weight(1f)
+                    ) { Text("Stop Session") }
+                }
 
             Spacer(Modifier.height(16.dp))
         }
