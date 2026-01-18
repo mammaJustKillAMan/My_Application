@@ -39,7 +39,6 @@ fun EmergencyProfileScreen(
             label = { Text("Emergency Contact Name") },
             modifier = Modifier.fillMaxWidth()
         )
-
         Spacer(Modifier.height(16.dp))
 
         OutlinedTextField(
