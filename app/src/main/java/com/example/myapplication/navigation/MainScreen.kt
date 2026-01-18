@@ -97,17 +97,17 @@ fun MainScreen(
 
             Spacer(Modifier.height(16.dp))
 
-        // Logger buttons
-        if (authState is com.example.myapplication.auth.AuthState.Authenticated) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                Button(
-                    onClick = { loggerViewModel.startSession() },
-                    enabled = !loggerViewModel.isLogging,
-                    modifier = Modifier.weight(1f)
-                ) { Text("Start Session") }
+            // Logger buttons
+            if (authState is com.example.myapplication.auth.AuthState.Authenticated) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    Button(
+                        onClick = { loggerViewModel.startSession() },
+                        enabled = !loggerViewModel.isLogging,
+                        modifier = Modifier.weight(1f)
+                    ) { Text("Start Session") }
 
                 Button(
                     onClick = { loggerViewModel.stopSession() },
