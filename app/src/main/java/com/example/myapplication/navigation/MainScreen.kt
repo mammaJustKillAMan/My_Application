@@ -113,7 +113,7 @@ fun MainScreen(
                         onClick = { loggerViewModel.stopSession() },
                         enabled = loggerViewModel.isLogging,
                         modifier = Modifier.weight(1f)
-                    ) { Text("Stop Session") }
+                    ) { Text("Stop Recording") }
                 }
 
                 Spacer(Modifier.height(16.dp))
