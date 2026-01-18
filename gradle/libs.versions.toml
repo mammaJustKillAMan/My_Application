@@ -14,6 +14,7 @@ lifecycle = "2.8.7"
 playServicesLocation = "21.3.0"
 runtime = "1.10.0"
 roomKtx = "2.8.4"
+firebaseCrashlyticsBuildtools = "3.0.6"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
