@@ -17,6 +17,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.myapplication.altitude.AltitudeRepository
 import com.example.myapplication.altitude.AltitudeViewModel
 import com.example.myapplication.auth.AuthViewModel
+import com.example.myapplication.logger.SessionLoggerViewModel
 import com.example.myapplication.navigation.RootNavGraph
 import com.example.myapplication.session.SessionStateViewModel
 import com.example.myapplication.ui.theme.MyApplicationTheme
