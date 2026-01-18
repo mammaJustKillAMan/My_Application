@@ -25,6 +25,7 @@ class MainActivity : ComponentActivity() {
 
     private val authViewModel: AuthViewModel by viewModels()
     val sessionStateViewModel: SessionStateViewModel by viewModels()
+    private val loggerViewModel: SessionLoggerViewModel by viewModels()
     val riskLevel = sessionStateViewModel.riskLevel
 
     private lateinit var altitudeViewModel: AltitudeViewModel
