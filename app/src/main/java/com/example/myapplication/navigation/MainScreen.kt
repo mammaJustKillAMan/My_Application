@@ -119,15 +119,31 @@ fun MainScreen(
                 Spacer(Modifier.height(16.dp))
             }
 
-        // Quick-access buttons row
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
             Button(
-                onClick = onEmergencyProfileClick,
-                modifier = Modifier.weight(1f)
-            ) { Text("Emergency") }
+                onClick = onEmergencyCallClick,
+                modifier = Modifier.fillMaxWidth(),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.error
+                )
+            ) {
+                Text(
+                    text = "CALL FOR HELP",
+                    color = MaterialTheme.colorScheme.onError,
+                    style = MaterialTheme.typography.titleMedium
+                )
+            }
+
+            Spacer(Modifier.height(16.dp))
+
+            // Quick-access buttons row
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                Button(
+                    onClick = onEmergencyProfileClick,
+                    modifier = Modifier.weight(1f)
+                ) { Text("Emergency") }
 
             Button(
                 onClick = onSymptomsClick,
