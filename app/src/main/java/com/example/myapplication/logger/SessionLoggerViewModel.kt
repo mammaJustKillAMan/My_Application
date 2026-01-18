@@ -2,8 +2,7 @@ package com.example.myapplication.logger
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myapplication.altitude.AltitudeViewModel
-import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
