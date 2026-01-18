@@ -6,8 +6,8 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 class SessionLoggerViewModel(
-    private val context: Context,
-    private val altitudeViewModel: AltitudeViewModel
+    private val locationRepository: LocationRepository,
+    private val routeRecorderViewModel: RouteRecorderViewModel
 ) : ViewModel() {
 
     private val dataStore = context.sessionDataStore
