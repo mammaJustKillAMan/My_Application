@@ -10,8 +10,8 @@ import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.auth.Aut
 
 @Composable
 fun EmergencyProfileScreen(
-    onBackClick: () -> Unit,
-    viewModel: EmergencyProfileViewModel = viewModel()
+    authViewModel: AuthViewModel,
+    onBackClick: () -> Unit
 ) {
     val state = viewModel.state
     var name by remember { mutableStateOf(viewModel.name) }
