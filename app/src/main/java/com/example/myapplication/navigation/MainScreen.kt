@@ -150,10 +150,11 @@ fun MainScreen(
                 modifier = Modifier.weight(1f)
             ) { Text("Symptoms") }
 
-            Button(
-                onClick = onMedicalGuideClick,
-                modifier = Modifier.weight(1f)
-            ) { Text("Medical Guide") }
+                Button(
+                    onClick = onMedicalGuideClick,
+                    modifier = Modifier.weight(1f)
+                ) { Text("Medical Guide") }
+            }
         }
     }
 }
