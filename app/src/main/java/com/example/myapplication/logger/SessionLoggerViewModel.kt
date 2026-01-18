@@ -15,11 +15,6 @@ class SessionLoggerViewModel(
 
     private var locationJob: Job? = null
 
-    private var startAltitude = 0.0
-    private var maxAltitude = 0.0
-    private var startTime: Long = 0
-
-    // Start a new session
     fun startSession() {
         if (isLogging) return
         val currentAltitude = altitudeViewModel.state.value.currentAltitude
