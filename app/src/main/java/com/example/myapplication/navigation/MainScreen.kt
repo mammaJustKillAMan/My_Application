@@ -116,8 +116,8 @@ fun MainScreen(
                     ) { Text("Stop Session") }
                 }
 
-            Spacer(Modifier.height(16.dp))
-        }
+                Spacer(Modifier.height(16.dp))
+            }
 
         // Quick-access buttons row
         Row(
