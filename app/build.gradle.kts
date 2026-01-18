@@ -60,7 +60,6 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-firestore")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.2")
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
     implementation(libs.google.play.services.location)
 
