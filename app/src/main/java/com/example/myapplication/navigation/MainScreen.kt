@@ -95,7 +95,7 @@ fun MainScreen(
                 )
             }
 
-        Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(16.dp))
 
         // Logger buttons
         if (authState is com.example.myapplication.auth.AuthState.Authenticated) {
