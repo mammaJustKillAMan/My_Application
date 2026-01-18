@@ -59,19 +59,14 @@ fun EmergencyProfileScreen(
 
         Spacer(Modifier.height(16.dp))
 
-        when (state) {
-            is EmergencyProfileState.Loading ->
-                CircularProgressIndicator()
-
-            is EmergencyProfileState.Success ->
-                Text("Saved successfully", color = MaterialTheme.colorScheme.primary)
-
-            is EmergencyProfileState.Error ->
-                Text(
-                    text = state.message,
-                    color = MaterialTheme.colorScheme.error
-                )
-
+        // Observe authState for success/error feedback
+        val authState by authViewModel.authState.collectAsState()
+        when (authState) {
+            is AuthState.Loading -> CircularProgressIndicator()
+            is AuthState.Error -> Text(
+                text = (authState as AuthState.Error).message,
+                color = MaterialTheme.colorScheme.error
+            )
             else -> {}
         }
 
