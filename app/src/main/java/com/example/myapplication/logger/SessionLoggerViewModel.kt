@@ -13,8 +13,7 @@ class SessionLoggerViewModel(
     var isLogging: Boolean = false
         private set
 
-    var state by mutableStateOf<LoggerState>(LoggerState.Idle)
-    var isLogging by mutableStateOf(false)
+    private var locationJob: Job? = null
 
     private var startAltitude = 0.0
     private var maxAltitude = 0.0
