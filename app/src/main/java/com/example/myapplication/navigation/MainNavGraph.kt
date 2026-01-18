@@ -35,7 +35,18 @@ fun MainNavGraph(
     ) {
         composable(MainRoute.Home.route) {
             MainScreen(
-                onEmergencyProfileClick = { navController.navigate(MainRoute.EmergencyProfile.route) },
+                onEmergencyProfileClick = {
+                    navController.navigate(MainRoute.EmergencyProfile.route)
+                },
+                onSymptomsClick = {
+                    navController.navigate(MainRoute.SymptomsChecklist.route)
+                },
+                onMedicalGuideClick = {
+                    navController.navigate(MainRoute.MedicalGuide.route)
+                },
+                onEmergencyCallClick = {
+                    navController.navigate(MainRoute.EmergencyCall.route)
+                },
                 altitudeViewModel = altitudeViewModel,
                 authViewModel = authViewModel,
                 loggerViewModel = loggerViewModel,
