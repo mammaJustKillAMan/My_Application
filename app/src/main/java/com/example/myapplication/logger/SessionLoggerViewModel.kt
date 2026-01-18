@@ -17,10 +17,6 @@ class SessionLoggerViewModel(
 
     fun startSession() {
         if (isLogging) return
-        val currentAltitude = altitudeViewModel.state.value.currentAltitude
-        startAltitude = currentAltitude
-        maxAltitude = currentAltitude
-        startTime = System.currentTimeMillis()
         isLogging = true
         state = LoggerState.Logging
     }
