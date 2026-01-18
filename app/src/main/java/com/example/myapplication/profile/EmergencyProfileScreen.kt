@@ -13,9 +13,9 @@ fun EmergencyProfileScreen(
     authViewModel: AuthViewModel,
     onBackClick: () -> Unit
 ) {
-    val state = viewModel.state
-    var name by remember { mutableStateOf(viewModel.name) }
-    var phone by remember { mutableStateOf(viewModel.phone) }
+    var name by remember { mutableStateOf("") }
+    var phone by remember { mutableStateOf("") }
+    var state: EmergencyProfileState.Loading by remember { mutableStateOf(EmergencyProfileState.Idle) }
 
     LaunchedEffect(Unit) {
         viewModel.loadEmergencyContact()
