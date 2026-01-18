@@ -31,7 +31,6 @@ fun EmergencyProfileScreen(
             .padding(24.dp)
     ) {
         Text("Emergency Contact", style = MaterialTheme.typography.headlineMedium)
-
         Spacer(Modifier.height(24.dp))
 
         OutlinedTextField(
