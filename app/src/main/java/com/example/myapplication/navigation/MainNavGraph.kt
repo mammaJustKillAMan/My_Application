@@ -50,8 +50,8 @@ fun MainNavGraph(
                 altitudeViewModel = altitudeViewModel,
                 authViewModel = authViewModel,
                 loggerViewModel = loggerViewModel,
-                onSymptomsClick = { navController.navigate(MainRoute.SymptomsChecklist.route) },
-                onMedicalGuideClick = { navController.navigate(MainRoute.MedicalGuide.route) }
+                sessionStateViewModel = sessionStateViewModel,
+                navController = navController
             )
         }
 
