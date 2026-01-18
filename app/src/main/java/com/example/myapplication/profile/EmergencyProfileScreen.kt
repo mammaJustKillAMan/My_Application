@@ -19,7 +19,10 @@ fun EmergencyProfileScreen(
 
     // Load existing contact
     LaunchedEffect(Unit) {
-        viewModel.loadEmergencyContact()
+        authViewModel.loadEmergencyContact { loadedName, loadedPhone ->
+            name = loadedName
+            phone = loadedPhone
+        }
     }
 
     Column(
