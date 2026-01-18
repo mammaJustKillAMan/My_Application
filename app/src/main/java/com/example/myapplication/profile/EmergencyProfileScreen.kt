@@ -76,7 +76,6 @@ fun EmergencyProfileScreen(
         }
 
         Spacer(Modifier.height(24.dp))
-
         TextButton(onClick = onBackClick) {
             Text("Back")
         }
