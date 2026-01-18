@@ -15,8 +15,8 @@ fun RootNavGraph(
     navController: NavHostController,
     authViewModel: AuthViewModel,
     altitudeViewModel: AltitudeViewModel,
-    loggerViewModel: SessionLoggerViewModel,
-    sessionStateViewModel: SessionStateViewModel
+    sessionStateViewModel: SessionStateViewModel,
+    loggerViewModel: SessionLoggerViewModel
 ) {
     NavHost(
         navController = navController,
