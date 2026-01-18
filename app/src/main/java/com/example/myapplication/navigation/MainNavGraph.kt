@@ -13,6 +13,7 @@ import androidx.navigation.compose.composable
 import com.example.myapplication.altitude.AltitudeViewModel
 import com.example.myapplication.auth.AuthViewModel
 import com.example.myapplication.logger.SessionLoggerViewModel
+import com.example.myapplication.medical.EmergencyCallScreen
 import com.example.myapplication.profile.EmergencyProfileScreen
 import com.example.myapplication.medical.MedicalGuideScreen
 import com.example.myapplication.medical.SymptomsChecklistScreen
