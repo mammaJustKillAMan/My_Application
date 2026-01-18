@@ -17,6 +17,7 @@ fun EmergencyProfileScreen(
     var phone by remember { mutableStateOf("") }
     var state: EmergencyProfileState.Loading by remember { mutableStateOf(EmergencyProfileState.Idle) }
 
+    // Load existing contact
     LaunchedEffect(Unit) {
         viewModel.loadEmergencyContact()
     }
