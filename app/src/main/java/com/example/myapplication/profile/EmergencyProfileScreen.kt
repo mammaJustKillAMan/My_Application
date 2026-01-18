@@ -47,7 +47,6 @@ fun EmergencyProfileScreen(
             label = { Text("Emergency Phone Number") },
             modifier = Modifier.fillMaxWidth()
         )
-
         Spacer(Modifier.height(24.dp))
 
         Button(
