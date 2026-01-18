@@ -10,7 +10,8 @@ class SessionLoggerViewModel(
     private val routeRecorderViewModel: RouteRecorderViewModel
 ) : ViewModel() {
 
-    private val dataStore = context.sessionDataStore
+    var isLogging: Boolean = false
+        private set
 
     var state by mutableStateOf<LoggerState>(LoggerState.Idle)
     var isLogging by mutableStateOf(false)
