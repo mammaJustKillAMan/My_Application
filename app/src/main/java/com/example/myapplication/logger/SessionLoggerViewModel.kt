@@ -18,7 +18,13 @@ class SessionLoggerViewModel(
     fun startSession() {
         if (isLogging) return
         isLogging = true
-        state = LoggerState.Logging
+        routeRecorderViewModel.clearRoute()
+
+        locationJob = viewModelScope.launch {
+            locationRepository.locationUpdates().collect {
+                routeRecorderViewModel.addLocation(it)
+            }
+        }
     }
 
     // Stop session and save it
