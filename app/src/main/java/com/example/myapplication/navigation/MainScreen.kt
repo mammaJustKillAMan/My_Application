@@ -48,31 +48,52 @@ fun MainScreen(
 
     LaunchedEffect(true) { altitudeViewModel.startTracking(sessionStateViewModel) }
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp)
-            .verticalScroll(scrollState)
-    ) {
-        // Altitude box
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(riskColor, shape = MaterialTheme.shapes.medium)
-                .padding(16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text(
-                "Current Altitude: %.1f m".format(altitudeState.currentAltitude),
-                style = MaterialTheme.typography.headlineSmall,
-                color = MaterialTheme.colorScheme.onBackground
-            )
-            Text(
-                "Ascent Rate: %.1f m/min".format(altitudeState.ascentRate),
-                style = MaterialTheme.typography.bodyLarge,
-                color = riskTextColor
+    Scaffold(
+        topBar = {
+            CenterAlignedTopAppBar(
+                title = { Text("Altitude Safety Companion") },
+                actions = {
+                    // Logout button
+                    IconButton(onClick = {
+                        authViewModel.logout()
+                        navController.navigate(RootScreen.Auth.route) {
+                            popUpTo(RootScreen.Main.route) { inclusive = true }
+                        }
+                    }) {
+                        Icon(
+                            imageVector = Icons.Default.ExitToApp,
+                            contentDescription = "Logout"
+                        )
+                    }
+                }
             )
         }
+    ) { paddingValues ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp)
+                .verticalScroll(scrollState)
+        ) {
+            // Altitude box
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(riskColor, shape = MaterialTheme.shapes.medium)
+                    .padding(16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    "Current Altitude: %.1f m".format(altitudeState.currentAltitude),
+                    style = MaterialTheme.typography.headlineSmall,
+                    color = MaterialTheme.colorScheme.onBackground
+                )
+                Text(
+                    "Ascent Rate: %.1f m/min".format(altitudeState.ascentRate),
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = riskTextColor
+                )
+            }
 
         Spacer(Modifier.height(16.dp))
 
