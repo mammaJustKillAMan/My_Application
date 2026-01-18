@@ -27,7 +27,6 @@ class SessionLoggerViewModel(
         }
     }
 
-    // Stop session and save it
     fun stopSession() {
         if (!isLogging) return
         val endAltitude = altitudeViewModel.state.value.currentAltitude
