@@ -8,6 +8,10 @@ data class Symptom(
 
 object AltitudeRiskCalculator {
 
+    private const val SAFE_ASCENT = 3.0      // m/min
+    private const val WARNING_ASCENT = 8.0   // m/min
+    private const val DANGEROUS_ASCENT = 15.0 // m/min
+
     fun calculateRisk(ascentRate: Double, symptoms: List<Symptom>): RiskLevel {
         var riskScore = ascentRate / 100.0 // baseline from ascent rate
 
