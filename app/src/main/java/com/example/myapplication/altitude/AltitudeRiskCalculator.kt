@@ -36,7 +36,7 @@ object AltitudeRiskCalculator {
         }
 
         // Vomiting overrides everything
-        if (symptoms.any { it.checked && it.name.lowercase() == "vomiting" }) {
+        if (symptoms.any { it.checked && it.name.equals("vomiting", true) }) {
             return RiskLevel.HIGH
         }
 
