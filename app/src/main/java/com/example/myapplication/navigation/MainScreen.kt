@@ -49,7 +49,7 @@ fun MainScreen(
         RiskLevel.HIGH -> MaterialTheme.colorScheme.onErrorContainer
     }
 
-    LaunchedEffect(true) { altitudeViewModel.startTracking(sessionStateViewModel) }
+    LaunchedEffect(Unit) { altitudeViewModel.startTracking(sessionStateViewModel) }
 
     Scaffold(
         topBar = {
