@@ -32,9 +32,6 @@ class AltitudeViewModel(
 
         trackingJob = viewModelScope.launch {
             while (true) {
-                _state.value = _state.value.copy(isLoading = true)
-
-                val altitude = repository.getCurrentAltitude() ?: _state.value.currentAltitude
                 val prevAltitude = _state.value.currentAltitude
                 val altitude = repository.getCurrentAltitude() ?: prevAltitude
 
