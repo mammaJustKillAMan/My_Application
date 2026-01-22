@@ -23,7 +23,12 @@ object AltitudeRiskCalculator {
             else -> riskScore += 8.0 // very rapid ascent
         }
 
-        // Add weighted symptoms
+        // DESCENT BENEFIT (slow relief, not instant)
+        if (ascentRate < 0) {
+            riskScore += ascentRate / 300.0 // gentle reduction
+        }
+
+        // SYMPTOMS
         for (symptom in symptoms) {
             if (symptom.checked) {
                 riskScore += symptom.weight
