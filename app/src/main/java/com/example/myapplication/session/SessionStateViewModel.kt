@@ -20,17 +20,6 @@ class SessionStateViewModel : ViewModel() {
         Symptom("Vomiting", 10.0)
     )
 
-    val riskLevel: RiskLevel
-        get() {
-            val totalScore = symptoms.filter { it.checked }.sumOf { it.weight }
-            return when {
-                totalScore >= 10.0 -> RiskLevel.HIGH
-                totalScore >= 3.0 -> RiskLevel.MODERATE
-                else -> RiskLevel.LOW
-            }
-        }
-
-
     // Toggle a symptom
     fun toggleSymptom(index: Int) {
         if (index in symptoms.indices) {
