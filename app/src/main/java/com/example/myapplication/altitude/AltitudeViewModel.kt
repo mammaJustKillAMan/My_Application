@@ -9,12 +9,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-data class AltitudeState(
-    val currentAltitude: Double = 0.0,
-    val previousAltitude: Double = 0.0,
-    val ascentRate: Double = 0.0, // meters per minute
-    val isLoading: Boolean = false
-)
+private const val MIN_ALTITUDE_DELTA = 3.0      // meters
+private const val MAX_REALISTIC_ASCENT = 25.0  // m/min
 
 class AltitudeViewModel(
     private val repository: AltitudeRepository
