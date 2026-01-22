@@ -57,6 +57,7 @@ fun MainNavGraph(
 
         composable(MainRoute.EmergencyProfile.route) {
             EmergencyProfileScreen(
+                authViewModel = authViewModel,
                 onBackClick = { navController.popBackStack() }
             )
         }
