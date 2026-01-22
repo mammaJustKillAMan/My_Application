@@ -20,7 +20,7 @@ import com.example.myapplication.altitude.RiskLevel
 
 @Composable
 fun MedicalGuideScreen(
-    sessionStateViewModel: SessionStateViewModel,
+    riskLevel: RiskLevel,
     onBackClick: () -> Unit
 ) {
     val scrollState = rememberScrollState()
