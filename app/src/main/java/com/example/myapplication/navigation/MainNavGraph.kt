@@ -59,7 +59,6 @@ fun MainNavGraph(
             EmergencyProfileScreen(
                 onBackClick = { navController.popBackStack() }
             )
-
         }
 
         composable(MainRoute.SymptomsChecklist.route) {
