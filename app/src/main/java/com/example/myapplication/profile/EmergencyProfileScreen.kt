@@ -50,7 +50,10 @@ fun EmergencyProfileScreen(
         Spacer(Modifier.height(24.dp))
 
         Button(
-            onClick = { viewModel.updateEmergencyContact(name, phone) },
+            onClick = {
+                state = EmergencyProfileState.Loading
+                authViewModel.updateEmergencyContact(name, phone)
+            },
             modifier = Modifier.fillMaxWidth(),
             enabled = state != EmergencyProfileState.Loading
         ) {
