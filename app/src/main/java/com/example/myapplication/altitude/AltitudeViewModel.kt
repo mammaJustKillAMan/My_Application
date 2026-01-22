@@ -36,9 +36,10 @@ class AltitudeViewModel(
 
                 val altitude = repository.getCurrentAltitude() ?: _state.value.currentAltitude
                 val prevAltitude = _state.value.currentAltitude
-                val ascentRate = if (prevAltitude != 0.0) {
-                    (altitude - prevAltitude) / (intervalMs / 60000.0)
-                } else 0.0
+                val altitude = repository.getCurrentAltitude() ?: prevAltitude
+
+                val delta = altitude - prevAltitude
+                val minutes = intervalMs / 60000.0
 
                 val ascentRate = when {
                     prevAltitude == 0.0 -> 0.0
