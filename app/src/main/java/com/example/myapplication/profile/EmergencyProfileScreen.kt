@@ -6,7 +6,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.myapplication.auth.AuthViewModel
-import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.auth.AuthState
+import com.example.myapplication.auth.AuthState
 
 @Composable
 fun EmergencyProfileScreen(
