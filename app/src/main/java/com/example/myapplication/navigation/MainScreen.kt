@@ -75,7 +75,7 @@ fun MainScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(16.dp)
+                .padding(paddingValues)
                 .verticalScroll(scrollState)
         ) {
             // Altitude box
