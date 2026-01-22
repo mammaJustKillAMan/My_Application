@@ -40,8 +40,17 @@ class AltitudeViewModel(
                     (altitude - prevAltitude) / (intervalMs / 60000.0)
                 } else 0.0
 
-                // Calculate risk using SessionStateViewModel symptoms
-                val risk = AltitudeRiskCalculator.calculateRisk(ascentRate, sessionStateViewModel.symptoms)
+                val ascentRate = when {
+                    prevAltitude == 0.0 -> 0.0
+                    kotlin.math.abs(delta) < MIN_ALTITUDE_DELTA -> 0.0
+                    kotlin.math.abs(delta / minutes) > MAX_REALISTIC_ASCENT -> 0.0
+                    else -> delta / minutes
+                }
+
+                val risk = AltitudeRiskCalculator.calculateRisk(
+                    ascentRate = ascentRate,
+                    symptoms = sessionStateViewModel.symptoms
+                )
 
                 _state.value = AltitudeState(
                     currentAltitude = altitude,
