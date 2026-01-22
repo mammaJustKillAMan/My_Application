@@ -13,7 +13,15 @@ object AltitudeRiskCalculator {
     private const val DANGEROUS_ASCENT = 15.0 // m/min
 
     fun calculateRisk(ascentRate: Double, symptoms: List<Symptom>): RiskLevel {
-        var riskScore = ascentRate / 100.0 // baseline from ascent rate
+        var riskScore = 0.0
+
+        // ASCENT CONTRIBUTION (real AMS logic)
+        when {
+            ascentRate <= SAFE_ASCENT -> riskScore += 0.0
+            ascentRate <= WARNING_ASCENT -> riskScore += 2.0
+            ascentRate <= DANGEROUS_ASCENT -> riskScore += 5.0
+            else -> riskScore += 8.0 // very rapid ascent
+        }
 
         // Add weighted symptoms
         for (symptom in symptoms) {
