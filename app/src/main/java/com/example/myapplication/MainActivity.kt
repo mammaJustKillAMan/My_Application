@@ -65,7 +65,7 @@ class MainActivity : ComponentActivity() {
                 }
 
                 //scaffold for basic layout
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Scaffold(modifier = Modifier.fillMaxSize()) { paddingValues ->
                     val navController = rememberNavController()
 
                     if (hasLocationPermission) {
