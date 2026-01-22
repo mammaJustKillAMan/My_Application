@@ -25,7 +25,6 @@ fun MedicalGuideScreen(
 ) {
     val scrollState = rememberScrollState()
     var expandedIndex by remember { mutableStateOf(-1) }
-    val riskLevel = sessionStateViewModel.riskLevel
 
     val riskColor = when (riskLevel) {
         RiskLevel.LOW -> MaterialTheme.colorScheme.tertiaryContainer
