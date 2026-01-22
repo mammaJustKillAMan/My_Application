@@ -20,6 +20,7 @@ import com.example.myapplication.logger.SessionLoggerViewModel
 import com.example.myapplication.medical.MedicalGuideScreen
 import com.example.myapplication.session.SessionStateViewModel
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(
     onEmergencyProfileClick: () -> Unit,
