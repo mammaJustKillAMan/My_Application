@@ -33,7 +33,7 @@ fun MainScreen(
     navController: NavHostController
 ) {
     val altitudeState by altitudeViewModel.state.collectAsState()
-    val riskLevel = sessionStateViewModel.riskLevel
+    val riskLevel = altitudeState.riskLevel
     val authState by authViewModel.authState.collectAsState()
     val scrollState = rememberScrollState()
 
