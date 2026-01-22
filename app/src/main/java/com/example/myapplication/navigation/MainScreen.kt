@@ -64,7 +64,7 @@ fun MainScreen(
                         }
                     }) {
                         Icon(
-                            imageVector = Icons.Default.ExitToApp,
+                            imageVector = Icons.Filled.ExitToApp,
                             contentDescription = "Logout"
                         )
                     }
