@@ -47,6 +47,7 @@ class AltitudeViewModel(
                     currentAltitude = altitude,
                     previousAltitude = prevAltitude,
                     ascentRate = ascentRate,
+                    riskLevel = risk,
                     isLoading = false
                 )
 
