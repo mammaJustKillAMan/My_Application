@@ -27,7 +27,10 @@ class AltitudeViewModel(
 
     private var trackingJob: Job? = null
 
-    fun startTracking(sessionStateViewModel: SessionStateViewModel, intervalMs: Long = 120_000L) {
+    fun startTracking(
+        sessionStateViewModel: SessionStateViewModel,
+        intervalMs: Long = 120_000L
+    ) {
         if (trackingJob != null) return
 
         trackingJob = viewModelScope.launch {
