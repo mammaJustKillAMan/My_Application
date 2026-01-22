@@ -5,7 +5,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import com.example.myapplication.altitude.Symptom
-import com.example.myapplication.altitude.RiskLevel
 
 class SessionStateViewModel : ViewModel() {
 
