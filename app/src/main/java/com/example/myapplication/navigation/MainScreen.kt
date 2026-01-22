@@ -17,7 +17,6 @@ import com.example.myapplication.altitude.AltitudeViewModel
 import com.example.myapplication.altitude.RiskLevel
 import com.example.myapplication.auth.AuthViewModel
 import com.example.myapplication.logger.SessionLoggerViewModel
-import com.example.myapplication.medical.MedicalGuideScreen
 import com.example.myapplication.session.SessionStateViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
