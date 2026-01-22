@@ -41,8 +41,8 @@ object AltitudeRiskCalculator {
         }
 
         return when {
-            riskScore < 6 -> RiskLevel.LOW
-            riskScore < 12 -> RiskLevel.MODERATE
+            riskScore < 4 -> RiskLevel.LOW
+            riskScore < 8 -> RiskLevel.MODERATE
             else -> RiskLevel.HIGH
         }
     }
