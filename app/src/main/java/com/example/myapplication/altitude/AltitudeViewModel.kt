@@ -1,6 +1,5 @@
 package com.example.myapplication.altitude
 
-import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.myapplication.session.SessionStateViewModel
