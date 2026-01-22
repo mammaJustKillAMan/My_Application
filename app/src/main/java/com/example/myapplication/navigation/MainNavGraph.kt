@@ -70,7 +70,7 @@ fun MainNavGraph(
 
         composable(MainRoute.MedicalGuide.route) {
             MedicalGuideScreen(
-                sessionStateViewModel = sessionStateViewModel,
+                riskLevel = altitudeViewModel.state.collectAsState().value.riskLevel,
                 onBackClick = { navController.popBackStack() }
             )
         }
