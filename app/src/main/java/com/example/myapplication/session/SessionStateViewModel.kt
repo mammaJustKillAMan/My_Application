@@ -1,7 +1,5 @@
 package com.example.myapplication.session
 
-import androidx.compose.runtime.derivedStateOf
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import com.example.myapplication.altitude.Symptom
