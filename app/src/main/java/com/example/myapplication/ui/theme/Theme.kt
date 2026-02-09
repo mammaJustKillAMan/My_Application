@@ -33,7 +33,7 @@ private val DarkColorScheme = darkColorScheme(
     onSecondaryContainer = Darkest,
 
     //tertiary
-    tertiary = PopGreen,
+    tertiary = PopOrange,
     onTertiary = Darkest,
     tertiaryContainer = PopGreenOpacity70,
     onTertiaryContainer = Darkest,
