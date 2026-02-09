@@ -90,13 +90,15 @@ fun EmergencyProfileScreen(
 
             Spacer(Modifier.height(24.dp))
 
-        OutlinedTextField(
-            value = name,
-            onValueChange = { name = it },
-            label = { Text("Emergency Contact Name") },
-            modifier = Modifier.fillMaxWidth()
-        )
-        Spacer(Modifier.height(16.dp))
+            OutlinedTextField(
+                value = name,
+                onValueChange = { name = it },
+                label = { Text("Contact Name") },
+                singleLine = true,
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            Spacer(Modifier.height(16.dp))
 
         OutlinedTextField(
             value = phone,
