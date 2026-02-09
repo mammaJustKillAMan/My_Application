@@ -35,9 +35,8 @@ import com.example.myapplication.logger.AppViewModelFactory
  */
 class MainActivity : ComponentActivity() {
 
-    private val authViewModel: AuthViewModel by viewModels()
-    val sessionStateViewModel: SessionStateViewModel by viewModels()
-    private val loggerViewModel: SessionLoggerViewModel by viewModels()
+    // 1. Initialize the Factory cleanly
+    private val appViewModelFactory by lazy { AppViewModelFactory(application) }
 
     private lateinit var altitudeViewModel: AltitudeViewModel
 
