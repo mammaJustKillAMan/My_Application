@@ -26,10 +26,4 @@ class SessionStateViewModel : ViewModel() {
             symptoms[index] = symptoms[index].copy(checked = !symptoms[index].checked)
         }
     }
-
-    fun resetSymptoms() {
-        symptoms.forEachIndexed { index, symptom ->
-            symptoms[index] = symptom.copy(checked = false)
-        }
-    }
 }
