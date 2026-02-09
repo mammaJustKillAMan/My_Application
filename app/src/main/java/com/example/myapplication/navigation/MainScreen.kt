@@ -52,6 +52,7 @@ fun MainScreen(
     onSymptomsClick: () -> Unit,
     onMedicalGuideClick: () -> Unit,
     onEmergencyCallClick: () -> Unit,
+    onPreviousHikesClick: () -> Unit,
     altitudeViewModel: AltitudeViewModel,
     authViewModel: AuthViewModel,
     loggerViewModel: SessionLoggerViewModel,
