@@ -62,7 +62,6 @@ fun MainScreen(
 ) {
     val context = LocalContext.current
     val altitudeState by altitudeViewModel.state.collectAsState()
-    val riskLevel = altitudeState.riskLevel
     val authState by authViewModel.authState.collectAsState()
 
     // Explicitly Typed State to prevent inference errors
