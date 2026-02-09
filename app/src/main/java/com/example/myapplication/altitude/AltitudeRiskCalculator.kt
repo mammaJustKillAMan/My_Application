@@ -1,5 +1,15 @@
 package com.example.myapplication.altitude
 
+/**
+ * Represents a symptom associated with altitude sickness.
+ *
+ * Each symptom contributes to the overall risk score when checked.
+ *
+ * @property name Human-readable name of the symptom.
+ * @property weight Numerical contribution to risk when the symptom is present.
+ * Higher values increase the risk more aggressively.
+ * @property checked Whether the symptom is currently present.
+ */
 data class Symptom(
     val name: String,
     val weight: Double, // higher = increases risk faster
