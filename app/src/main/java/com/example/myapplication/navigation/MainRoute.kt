@@ -13,4 +13,7 @@ sealed class MainRoute(val route: String) {
     object SymptomsChecklist : MainRoute("symptoms_checklist")
     object MedicalGuide : MainRoute("medical_guide")
     object EmergencyCall : MainRoute("emergency_call")
+    object PreviousHikes : MainRoute("previous_hikes")
+    object HikeDetail : MainRoute("hike_detail/{hikeId}") {
+        fun createRoute(hikeId: Long) = "hike_detail/$hikeId"}
 }
