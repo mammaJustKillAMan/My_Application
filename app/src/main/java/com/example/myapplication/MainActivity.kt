@@ -100,7 +100,6 @@ class MainActivity : ComponentActivity() {
                             loggerViewModel = loggerViewModel
                         )
                     } else {
-                        //permission not granted screen
                         PermissionRequiredScreen {
                             locationPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
                         }
