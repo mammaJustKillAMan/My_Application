@@ -10,9 +10,7 @@ import androidx.compose.ui.unit.dp
 
 
 /**
- * UI screen for logging in a user via email and password.
- * Displays input fields, login button, navigation to registration,
- * and reacts to authentication state changes.
+ * Login screen allowing users to authenticate using email and password.
  *
  * @param onRegisterClick Callback triggered when the user wants to go to the registration screen.
  * @param onLoginSuccess Callback called when login succeeds.
