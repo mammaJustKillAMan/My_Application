@@ -11,6 +11,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.myapplication.auth.AuthState
 import com.example.myapplication.auth.AuthViewModel
 import com.example.myapplication.auth.AuthState
 
