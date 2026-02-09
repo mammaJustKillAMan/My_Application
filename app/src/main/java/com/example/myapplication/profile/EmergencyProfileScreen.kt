@@ -15,6 +15,17 @@ import androidx.compose.ui.unit.dp
 import com.example.myapplication.auth.AuthState
 import com.example.myapplication.auth.AuthViewModel
 
+/**
+ * A screen for viewing and editing the user's emergency contact information.
+ *
+ * This screen allows the user to:
+ *  - View their current emergency contact name and phone number.
+ *  - Edit and save updated contact information.
+ *  - See feedback if an error occurs during the update.
+ *
+ * @param authViewModel The [AuthViewModel] used to load and save emergency contact data.
+ * @param onBackClick Lambda invoked when the back button is pressed to navigate back.
+ */
 @Composable
 fun EmergencyProfileScreen(
     authViewModel: AuthViewModel,
