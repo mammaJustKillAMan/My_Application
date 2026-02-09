@@ -67,8 +67,8 @@ fun EmergencyCallScreen(
                     Text("SERVICES", fontSize = 32.sp, fontWeight = FontWeight.Black)
                 }
             }
-        }
-    }
+
+            Spacer(modifier = Modifier.height(32.dp))
 
     // Confirmation dialog
     confirmNumber?.let { number ->
