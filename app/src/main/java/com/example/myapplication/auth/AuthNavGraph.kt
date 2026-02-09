@@ -12,7 +12,6 @@ import androidx.navigation.compose.composable
  * @property route The identifier used by the navigation graph.
  */
 sealed class AuthScreen(val route: String) {
-    /** Login screen route. */
     object Login : AuthScreen("login")
     object Register : AuthScreen("register")
 }
