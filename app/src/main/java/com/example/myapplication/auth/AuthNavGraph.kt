@@ -23,10 +23,15 @@ sealed class AuthScreen(val route: String) {
  * and registration screens. Handles transitions between the screens and
  * provides the ViewModel to each screen.
  *
- * @param navController The NavHostController managing navigation.
- * @param viewModel Shared AuthViewModel instance for login/register logic.
- * @param onAuthSuccess Callback executed when the user successfully logs in
- * or registers.
+ * Defines the login and registration screens and handles navigation
+ * between them. This graph is intended to be nested inside a higher-level
+ * NavHost and emits a callback when authentication succeeds.
+ *
+ * @receiver NavGraphBuilder Used to construct a nested navigation graph.
+ * @param navController NavController used for in-graph navigation actions.
+ * @param viewModel Shared [AuthViewModel] used by authentication screens.
+ * @param onAuthSuccess Callback invoked when authentication completes
+ * successfully (login, registration, or guest access).
  */
 fun NavGraphBuilder.authNavGraph(
     navController: NavController,
