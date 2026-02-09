@@ -133,20 +133,15 @@ fun EmergencyProfileScreen(
 
         Spacer(Modifier.height(16.dp))
 
-        // Observe authState for success/error feedback
-        val authState by authViewModel.authState.collectAsState()
-        when (authState) {
-            is AuthState.Loading -> CircularProgressIndicator()
-            is AuthState.Error -> Text(
-                text = (authState as AuthState.Error).message,
-                color = MaterialTheme.colorScheme.error
-            )
-            else -> {}
-        }
-
-        Spacer(Modifier.height(24.dp))
-        TextButton(onClick = onBackClick) {
-            Text("Back")
+            // Feedback Message
+            val authState by authViewModel.authState.collectAsState()
+            when (authState) {
+                is AuthState.Error -> Text(
+                    text = (authState as AuthState.Error).message,
+                    color = MaterialTheme.colorScheme.error
+                )
+                else -> {} // Success or Idle handled silently or via navigation if needed
+            }
         }
     }
 }
