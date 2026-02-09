@@ -57,7 +57,8 @@ fun MainScreen(
     authViewModel: AuthViewModel,
     loggerViewModel: SessionLoggerViewModel,
     sessionStateViewModel: SessionStateViewModel,
-    navController: NavHostController
+    navController: NavHostController,
+    trackingViewModel: TrackingViewModel
 ) {
     val altitudeState by altitudeViewModel.state.collectAsState()
     val riskLevel = altitudeState.riskLevel
