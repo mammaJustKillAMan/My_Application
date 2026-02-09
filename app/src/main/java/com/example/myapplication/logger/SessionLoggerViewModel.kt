@@ -15,10 +15,20 @@ class SessionLoggerViewModel(
 
     private var locationJob: Job? = null
 
-    fun startSession() {
-        if (isLogging) return
-        isLogging = true
-        routeRecorderViewModel.clearRoute()
+    // Passing the trackingViewModel from the UI to this function
+    /**
+     * Starts a hiking session by collecting location updates.
+     *
+     * Continuously receives location data from [AltitudeRepository] every [intervalMillis]
+     * and forwards it to the provided [trackingViewModel] along with the current [RiskLevel].
+     *
+     * If a session is already running, this function does nothing.
+     *
+     * @param trackingViewModel The [TrackingViewModel] to send location points to.
+     * @param currentRisk The current [RiskLevel] to associate with collected points.
+     */
+    fun startSession(trackingViewModel: TrackingViewModel, currentRisk: RiskLevel) {
+        if (locationJob?.isActive == true) return
 
         locationJob = viewModelScope.launch {
             locationRepository.locationUpdates().collect {
