@@ -16,7 +16,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.core.content.ContextCompat
 import androidx.navigation.compose.rememberNavController
-import com.example.myapplication.altitude.AltitudeRepository
 import com.example.myapplication.altitude.AltitudeViewModel
 import com.example.myapplication.auth.AuthViewModel
 import com.example.myapplication.logger.SessionLoggerViewModel
