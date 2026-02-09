@@ -19,12 +19,9 @@ import com.example.myapplication.tracking.TrackingViewModel
  * @param application The [Application] context required by [AndroidViewModel].
  */
 class SessionLoggerViewModel(
-    private val locationRepository: LocationRepository,
-    private val routeRecorderViewModel: RouteRecorderViewModel
-) : ViewModel() {
-
-    var isLogging: Boolean = false
-        private set
+    application: Application,
+    private val altitudeRepository: AltitudeRepository // Injected via factory
+) : AndroidViewModel(application) {
 
     private var locationJob: Job? = null
 
