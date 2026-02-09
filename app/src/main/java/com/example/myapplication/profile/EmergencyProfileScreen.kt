@@ -14,7 +14,6 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.example.myapplication.auth.AuthState
 import com.example.myapplication.auth.AuthViewModel
-import com.example.myapplication.auth.AuthState
 
 @Composable
 fun EmergencyProfileScreen(
