@@ -34,9 +34,9 @@ fun AuthNavGraph(
     viewModel: AuthViewModel,
     onAuthSuccess: () -> Unit
 ) {
-    NavHost(
-        navController = navController,
-        startDestination = AuthScreen.Login.route
+    navigation(
+        startDestination = AuthScreen.Login.route,
+        route = "auth_graph_route" // Unique ID for this graph
     ) {
         composable(AuthScreen.Login.route) {
             LoginScreen(
