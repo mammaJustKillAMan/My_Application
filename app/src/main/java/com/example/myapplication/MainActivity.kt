@@ -23,6 +23,16 @@ import com.example.myapplication.session.SessionStateViewModel
 import com.example.myapplication.ui.theme.MyApplicationTheme
 import com.example.myapplication.logger.AppViewModelFactory
 
+/**
+ * The main entry point of the application.
+ *
+ * Responsibilities:
+ *  - Initializes all core [ViewModel]s using [AppViewModelFactory].
+ *  - Handles runtime permission requests for location (altitude tracking) and notifications.
+ *  - Sets up the Compose content and theme.
+ *  - Launches the root navigation graph ([RootNavGraph]) if permissions are granted.
+ *  - Displays [PermissionRequiredScreen] if location permission is missing.
+ */
 class MainActivity : ComponentActivity() {
 
     private val authViewModel: AuthViewModel by viewModels()
