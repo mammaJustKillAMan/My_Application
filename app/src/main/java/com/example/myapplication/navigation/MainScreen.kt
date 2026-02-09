@@ -23,6 +23,28 @@ import com.example.myapplication.auth.AuthViewModel
 import com.example.myapplication.logger.SessionLoggerViewModel
 import com.example.myapplication.session.SessionStateViewModel
 
+/**
+ * The main screen of the application displaying altitude tracking, risk status, and user actions.
+ *
+ * Features:
+ *  - Live GPS map with current location and hike path (for logged-in users).
+ *  - Start/Stop hike session buttons integrated with [SessionLoggerViewModel] and [TrackingViewModel].
+ *  - Risk dashboard showing current altitude, ascent rate, and risk level.
+ *  - Menu buttons for accessing Symptoms, Medical Guide, Emergency Profile, and Emergency Calls.
+ *  - History section to view previous hikes (only for authenticated users).
+ *
+ * @param onEmergencyProfileClick Callback invoked when the emergency profile button is pressed.
+ * @param onSymptomsClick Callback invoked when the Symptoms button is pressed.
+ * @param onMedicalGuideClick Callback invoked when the Guide button is pressed.
+ * @param onEmergencyCallClick Callback invoked when the Emergency Actions button is pressed.
+ * @param onPreviousHikesClick Callback invoked when the View Previous Hikes item is pressed.
+ * @param altitudeViewModel The [AltitudeViewModel] providing current altitude and risk data.
+ * @param authViewModel The [AuthViewModel] managing authentication state.
+ * @param loggerViewModel The [SessionLoggerViewModel] for logging hiking sessions.
+ * @param sessionStateViewModel The [SessionStateViewModel] managing symptom and session state.
+ * @param navController The [NavHostController] used for navigation between screens.
+ * @param trackingViewModel The [TrackingViewModel] handling GPS tracking and hike paths.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(
