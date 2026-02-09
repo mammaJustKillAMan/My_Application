@@ -14,7 +14,6 @@ import androidx.navigation.compose.composable
 sealed class AuthScreen(val route: String) {
     /** Login screen route. */
     object Login : AuthScreen("login")
-    /** Registration screen route. */
     object Register : AuthScreen("register")
 }
 
