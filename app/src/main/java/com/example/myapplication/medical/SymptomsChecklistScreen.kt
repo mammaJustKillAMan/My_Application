@@ -12,6 +12,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.myapplication.session.SessionStateViewModel
 
+/**
+ * Displays a checklist of symptoms for the user to track during a session.
+ *
+ * Each symptom is represented with a checkbox that updates the state
+ * in [SessionStateViewModel]. Useful for monitoring altitude sickness
+ * or other health indicators during a hike.
+ *
+ * @param sessionStateViewModel The [SessionStateViewModel] that holds symptom states and provides methods to toggle them.
+ * @param onBackClick Callback invoked when the back button in the top bar is pressed.
+ */
 @Composable
 fun SymptomsChecklistScreen(
     sessionStateViewModel: SessionStateViewModel,
