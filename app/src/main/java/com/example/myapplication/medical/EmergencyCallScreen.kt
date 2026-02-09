@@ -27,7 +27,6 @@ fun EmergencyCallScreen(
     onBackClick: () -> Unit
 ) {
     val context = LocalContext.current
-    var confirmNumber by remember { mutableStateOf<String?>(null) }
 
     Scaffold(
         topBar = {
