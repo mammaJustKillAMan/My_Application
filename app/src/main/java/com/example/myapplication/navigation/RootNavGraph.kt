@@ -3,7 +3,6 @@ package com.example.myapplication.navigation
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import com.example.myapplication.altitude.AltitudeViewModel
 import com.example.myapplication.auth.AuthViewModel
 import com.example.myapplication.auth.AuthNavGraph
