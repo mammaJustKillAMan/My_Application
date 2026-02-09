@@ -70,14 +70,9 @@ fun EmergencyCallScreen(
 
             Spacer(modifier = Modifier.height(32.dp))
 
-    // Confirmation dialog
-    confirmNumber?.let { number ->
-        AlertDialog(
-            onDismissRequest = { confirmNumber = null },
-            title = { Text("Confirm Call") },
-            text = { Text("Are you sure you want to call $number?") },
-            confirmButton = {
-                TextButton(
+            // --- PRIVATE CONTACT BUTTON ---
+            if (isLoggedIn && emergencyContact != null) {
+                Button(
                     onClick = {
                         val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$emergencyContact"))
                         context.startActivity(intent)
