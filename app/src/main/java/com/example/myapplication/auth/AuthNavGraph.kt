@@ -19,9 +19,7 @@ sealed class AuthScreen(val route: String) {
 }
 
 /**
- * Defines the navigation graph for authentication flow, including login
- * and registration screens. Handles transitions between the screens and
- * provides the ViewModel to each screen.
+ * Builds the authentication navigation graph.
  *
  * Defines the login and registration screens and handles navigation
  * between them. This graph is intended to be nested inside a higher-level
