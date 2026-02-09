@@ -68,6 +68,15 @@ fun MainScreen(
     val trackingState: TrackingState by trackingViewModel.state.collectAsState()
 
     val scrollState = rememberScrollState()
+    val isGuest = authState !is AuthState.Authenticated
+
+    // 1. Sync Symptoms to Risk Calculation
+    LaunchedEffect(sessionStateViewModel.symptoms.map { it.checked }) {
+        val checkedNames = sessionStateViewModel.symptoms
+            .filter { it.checked }
+            .map { it.name }
+        altitudeViewModel.updateRisk(checkedNames)
+    }
 
     val riskColor = when(riskLevel) {
         RiskLevel.LOW -> MaterialTheme.colorScheme.tertiaryContainer
