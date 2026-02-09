@@ -7,6 +7,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+/**
+ * Displays a screen informing the user that location permission is required.
+ *
+ * Provides a button to trigger the permission request callback.
+ *
+ * @param onRequestClick Callback invoked when the user presses the "Grant Permission" button.
+ */
 @Composable
 fun PermissionRequiredScreen(onRequestClick: () -> Unit) {
     Column(
