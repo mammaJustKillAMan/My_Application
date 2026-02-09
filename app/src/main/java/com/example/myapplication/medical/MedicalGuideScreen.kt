@@ -39,8 +39,8 @@ fun MedicalGuideScreen(
     var expandedIndex by remember { mutableStateOf(-1) }
 
     val riskColor = when (riskLevel) {
-        RiskLevel.LOW -> MaterialTheme.colorScheme.tertiaryContainer
-        RiskLevel.MODERATE -> MaterialTheme.colorScheme.secondaryContainer
+        RiskLevel.LOW -> MaterialTheme.colorScheme.secondaryContainer
+        RiskLevel.MODERATE -> MaterialTheme.colorScheme.tertiaryContainer
         RiskLevel.HIGH -> MaterialTheme.colorScheme.errorContainer
     }
 
