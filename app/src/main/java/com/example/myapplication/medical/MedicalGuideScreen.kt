@@ -18,6 +18,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.myapplication.altitude.RiskLevel
 
+/**
+ * Displays an interactive guide for altitude sickness and related medical emergencies.
+ *
+ * Shows the current risk level (LOW, MODERATE, HIGH) and provides
+ * expandable sections explaining conditions such as AMS, HACE, and HAPE,
+ * symptoms to monitor, when to descend, and when to call emergency services.
+ *
+ * Sections are collapsible and scrollable for easy reading on mobile devices.
+ *
+ * @param riskLevel The current [RiskLevel] affecting the user, used to color-highlight risk information.
+ * @param onBackClick Callback invoked when the user presses the back button in the top bar.
+ */
 @Composable
 fun MedicalGuideScreen(
     riskLevel: RiskLevel,
