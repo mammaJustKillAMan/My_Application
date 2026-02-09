@@ -59,5 +59,8 @@ class AltitudeRepository(context: Context) {
                 result.lastLocation?.let { trySend(it) }
             }
         }
+
+        client.requestLocationUpdates(request, callback, Looper.getMainLooper())
+        awaitClose { client.removeLocationUpdates(callback) }
     }
 }
