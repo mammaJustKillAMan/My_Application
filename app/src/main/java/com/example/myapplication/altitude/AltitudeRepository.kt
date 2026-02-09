@@ -13,6 +13,15 @@ import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 
+/**
+ * Repository responsible for providing continuous location updates.
+ *
+ * Uses the Fused Location Provider to emit high-accuracy [Location] updates
+ * as a cold [Flow]. Location updates automatically start when the flow
+ * is collected and stop when the collection is cancelled.
+ *
+ * @param context Application context used to initialize the location client.
+ */
 class AltitudeRepository(context: Context) {
 
     private val fusedLocationClient: FusedLocationProviderClient =
