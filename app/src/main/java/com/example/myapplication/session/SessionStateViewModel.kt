@@ -16,6 +16,11 @@ class SessionStateViewModel : ViewModel() {
     )
 
     // Toggle a symptom
+    /**
+     * Toggles the checked state of a symptom at the given index.
+     *
+     * @param index The position of the symptom in [symptoms] to toggle.
+     */
     fun toggleSymptom(index: Int) {
         if (index in symptoms.indices) {
             symptoms[index] = symptoms[index].copy(checked = !symptoms[index].checked)
