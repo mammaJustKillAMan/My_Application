@@ -38,7 +38,22 @@ class MainActivity : ComponentActivity() {
     // 1. Initialize the Factory cleanly
     private val appViewModelFactory by lazy { AppViewModelFactory(application) }
 
-    private lateinit var altitudeViewModel: AltitudeViewModel
+    // 2. Initialize dependent ViewModels using the factory
+    private val authViewModel: AuthViewModel by viewModels { appViewModelFactory }
+    private val loggerViewModel: SessionLoggerViewModel by viewModels { appViewModelFactory }
+    private val altitudeViewModel: AltitudeViewModel by viewModels { appViewModelFactory }
+    private val sessionStateViewModel: SessionStateViewModel by viewModels { appViewModelFactory }
+
+    // 3. Define the request
+    private val requestPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted: Boolean ->
+        if (isGranted) {
+            // Permission granted
+        } else {
+            // Explain to user that notifications won't work
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
