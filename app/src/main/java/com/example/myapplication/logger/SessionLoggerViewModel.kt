@@ -33,7 +33,6 @@ class SessionLoggerViewModel(
      * If no session is active, this function does nothing.
      */
     fun stopSession() {
-        isLogging = false
         locationJob?.cancel()
     }
 }
