@@ -131,7 +131,7 @@ fun EmergencyProfileScreen(
                 }
             }
 
-        Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(16.dp))
 
             // Feedback Message
             val authState by authViewModel.authState.collectAsState()
