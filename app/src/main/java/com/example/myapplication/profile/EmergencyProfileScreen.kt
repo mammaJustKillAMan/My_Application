@@ -111,16 +111,25 @@ fun EmergencyProfileScreen(
 
             Spacer(Modifier.height(32.dp))
 
-        Button(
-            onClick = {
-                state = EmergencyProfileState.Loading
-                authViewModel.updateEmergencyContact(name, phone)
-            },
-            modifier = Modifier.fillMaxWidth(),
-            enabled = state != EmergencyProfileState.Loading
-        ) {
-            Text("Save")
-        }
+            Button(
+                onClick = {
+                    state = EmergencyProfileState.Loading
+                    authViewModel.updateEmergencyContact(name, phone)
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp),
+                enabled = state != EmergencyProfileState.Loading
+            ) {
+                if (state == EmergencyProfileState.Loading) {
+                    CircularProgressIndicator(
+                        modifier = Modifier.size(24.dp),
+                        color = MaterialTheme.colorScheme.onPrimary
+                    )
+                } else {
+                    Text("Save Changes")
+                }
+            }
 
         Spacer(Modifier.height(16.dp))
 
