@@ -6,6 +6,13 @@ data class Symptom(
     var checked: Boolean = false
 )
 
+/**
+ * Calculates altitude sickness risk based on ascent rate and symptoms.
+ *
+ * The calculation is inspired by real Acute Mountain Sickness (AMS)
+ * heuristics, combining ascent speed with symptom severity to produce
+ * a discrete [RiskLevel].
+ */
 object AltitudeRiskCalculator {
 
     /**
