@@ -81,20 +81,28 @@ fun EmergencyCallScreen(
             confirmButton = {
                 TextButton(
                     onClick = {
-                        dialNumber(number, context)
-                        confirmNumber = null
+                        val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$emergencyContact"))
+                        context.startActivity(intent)
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(200.dp),
+                    colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.tertiary),
+                    shape = MaterialTheme.shapes.large
+                ) {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text("CALL", fontSize = 32.sp, fontWeight = FontWeight.Black)
+                        Text("PRIVATE", fontSize = 32.sp, fontWeight = FontWeight.Black)
+                        Text("CONTACT", fontSize = 32.sp, fontWeight = FontWeight.Black)
                     }
-                ) { Text("Call") }
-            },
-            dismissButton = {
-                TextButton(onClick = { confirmNumber = null }) { Text("Cancel") }
+                }
+            } else {
+                Text(
+                    text = if (!isLoggedIn) "Log in to call private contact" else "No emergency contact saved",
+                    textAlign = TextAlign.Center,
+                    style = MaterialTheme.typography.bodyLarge
+                )
             }
-        )
+        }
     }
-}
-
-// Helper function
-fun dialNumber(phoneNumber: String, context: Context) {
-    val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phoneNumber"))
-    context.startActivity(intent)
 }
