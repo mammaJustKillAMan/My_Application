@@ -100,5 +100,16 @@ fun LoginScreen(
         if (state is AuthState.Loading){
             CircularProgressIndicator()
         }
+
+        Spacer(Modifier.height(48.dp))
+
+        HorizontalDivider(modifier = Modifier.padding(bottom = 24.dp)) // Added a subtle line
+
+        OutlinedButton(
+            onClick = { onGuestClick() },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Continue as Guest")
+        }
     }
 }
