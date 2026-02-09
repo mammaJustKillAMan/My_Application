@@ -23,6 +23,12 @@ import kotlinx.coroutines.flow.callbackFlow
  * @param context Application context used to initialize the location client.
  */
 class AltitudeRepository(context: Context) {
+    /**
+     * Fused location provider client used to request location updates.
+     *
+     * Uses the application context to avoid leaking an activity or service.
+     */
+    private val client = LocationServices.getFusedLocationProviderClient(context.applicationContext)
 
     private val fusedLocationClient: FusedLocationProviderClient =
         LocationServices.getFusedLocationProviderClient(context)
