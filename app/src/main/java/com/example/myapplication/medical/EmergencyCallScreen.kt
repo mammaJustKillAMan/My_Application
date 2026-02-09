@@ -20,6 +20,18 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 
+/**
+ * Screen that allows the user to make emergency calls.
+ *
+ * Displays buttons for dialing public emergency services (112) and,
+ * if the user is logged in and has a saved contact, a private emergency contact.
+ * Provides clear visual cues with large buttons and text for quick access.
+ *
+ * @param isLoggedIn Boolean indicating whether the user is logged in.
+ * @param emergencyContact Optional phone number of the user's private emergency contact.
+ * @param onBackClick Callback invoked when the back button in the top app bar is pressed.
+ */
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun EmergencyCallScreen(
     isLoggedIn: Boolean,
