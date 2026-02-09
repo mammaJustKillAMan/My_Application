@@ -86,8 +86,6 @@ fun LoginScreen(
             Text("Forgot password?")
         }
 
-        Spacer(Modifier.height(16.dp))
-
         TextButton(onClick = onRegisterClick){
             Text("Create an account")
         }
