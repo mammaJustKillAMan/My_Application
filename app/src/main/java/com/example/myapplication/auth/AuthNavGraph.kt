@@ -44,7 +44,8 @@ fun AuthNavGraph(
                 onRegisterClick = {
                     navController.navigate(AuthScreen.Register.route)
                 },
-                onLoginSuccess = onAuthSuccess
+                onLoginSuccess = onAuthSuccess,
+                onGuestClick = onAuthSuccess
             )
         }
 
