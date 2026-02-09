@@ -84,16 +84,12 @@ class MainActivity : ComponentActivity() {
                         ActivityResultContracts.RequestPermission()
                     ) { isGranted -> hasLocationPermission = isGranted }
 
-                //request permission if not granted
-                LaunchedEffect(Unit) {
-                    if (!hasLocationPermission) {
-                        locationPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
+                    // Initial check on startup
+                    LaunchedEffect(Unit) {
+                        if (!hasLocationPermission) {
+                            permissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
+                        }
                     }
-                }
-
-                //scaffold for basic layout
-                Scaffold(modifier = Modifier.fillMaxSize()) { paddingValues ->
-                    val navController = rememberNavController()
 
                     if (hasLocationPermission) {
                         RootNavGraph(
