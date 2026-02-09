@@ -51,7 +51,7 @@ fun MedicalGuideScreen(
     }
 
     val sections = listOf(
-        "What is AMS" to "Acute Mountain Sickness (AMS) is a condition caused by ascending too quickly to high altitudes. It can affect anyone and may lead to serious complications if ignored.",
+        "What is AMS?" to "Acute Mountain Sickness (AMS) is a condition caused by ascending too quickly to high altitudes. It can affect anyone and may lead to serious complications if ignored.",
         "Early signs you should monitor" to "Common early signs include headache, nausea, fatigue, dizziness, shortness of breath, and difficulty sleeping. Monitor yourself and fellow climbers closely.",
         "What is HACE (Brain Swelling)?" to "High Altitude Cerebral Edema (HACE) is a severe progression of AMS where the brain swells. Symptoms include extreme confusion, loss of coordination (ataxia), and altered consciousness. Immediate descent is critical.",
         "What is HAPE (Fluid in Lungs)?" to "High Altitude Pulmonary Edema (HAPE) is fluid accumulation in the lungs. Look for extreme breathlessness at rest, a wet cough (sometimes pink/frothy), and blue lips. It can occur even without other AMS signs.",
