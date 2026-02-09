@@ -35,7 +35,7 @@ private val DarkColorScheme = darkColorScheme(
     //tertiary
     tertiary = PopOrange,
     onTertiary = Darkest,
-    tertiaryContainer = PopGreenOpacity70,
+    tertiaryContainer = PopOrangeOpacity70,
     onTertiaryContainer = Darkest,
 
     //error
