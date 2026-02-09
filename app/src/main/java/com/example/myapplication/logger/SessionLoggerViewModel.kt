@@ -41,8 +41,13 @@ class SessionLoggerViewModel(
         if (locationJob?.isActive == true) return
 
         locationJob = viewModelScope.launch {
-            locationRepository.locationUpdates().collect {
-                routeRecorderViewModel.addLocation(it)
+            altitudeRepository.getLocationUpdates(10000L).collect { location ->
+                trackingViewModel.addLocationPoint(
+                    location.latitude,
+                    location.longitude,
+                    location.altitude,
+                    currentRisk
+                )
             }
         }
     }
