@@ -3,6 +3,11 @@ package com.example.myapplication.logger
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+import com.example.myapplication.altitude.AltitudeRepository
+import com.example.myapplication.altitude.RiskLevel
+import com.example.myapplication.tracking.TrackingViewModel
 
 /**
  * ViewModel responsible for logging a hiking session.
