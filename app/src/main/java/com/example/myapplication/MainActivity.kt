@@ -82,9 +82,7 @@ class MainActivity : ComponentActivity() {
                     // Permission Launcher
                     val permissionLauncher = rememberLauncherForActivityResult(
                         ActivityResultContracts.RequestPermission()
-                    ) { granted ->
-                        hasLocationPermission = granted
-                    }
+                    ) { isGranted -> hasLocationPermission = isGranted }
 
                 //request permission if not granted
                 LaunchedEffect(Unit) {
