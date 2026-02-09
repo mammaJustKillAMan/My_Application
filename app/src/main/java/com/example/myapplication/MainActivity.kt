@@ -70,15 +70,14 @@ class MainActivity : ComponentActivity() {
                 ) {
                     val navController = rememberNavController()
 
-                //state to track if location permission is granted
-                var hasLocationPermission by remember {
-                    mutableStateOf(
-                        ContextCompat.checkSelfPermission(
-                            this,
-                            Manifest.permission.ACCESS_FINE_LOCATION
-                        ) == PackageManager.PERMISSION_GRANTED
-                    )
-                }
+                    // State to track permission status
+                    var hasLocationPermission by remember {
+                        mutableStateOf(
+                            ContextCompat.checkSelfPermission(
+                                this, Manifest.permission.ACCESS_FINE_LOCATION
+                            ) == PackageManager.PERMISSION_GRANTED
+                        )
+                    }
 
                 //launcher for runtime permission request
                 val locationPermissionLauncher =
