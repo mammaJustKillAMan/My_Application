@@ -10,6 +10,9 @@ object AltitudeRiskCalculator {
 
     private const val SAFE_ASCENT = 3.0      // m/min
     private const val WARNING_ASCENT = 8.0   // m/min
+    /**
+     * Ascent rate considered dangerous and strongly associated with AMS.
+     */
     private const val DANGEROUS_ASCENT = 15.0 // m/min
 
     /**
