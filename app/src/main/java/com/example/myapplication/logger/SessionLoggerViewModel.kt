@@ -5,6 +5,15 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
+/**
+ * ViewModel responsible for logging a hiking session.
+ *
+ * Collects location updates from [AltitudeRepository] and sends them
+ * to a [TrackingViewModel] along with the current altitude risk level.
+ *
+ * @property altitudeRepository Repository used to obtain location and altitude data.
+ * @param application The [Application] context required by [AndroidViewModel].
+ */
 class SessionLoggerViewModel(
     private val locationRepository: LocationRepository,
     private val routeRecorderViewModel: RouteRecorderViewModel
