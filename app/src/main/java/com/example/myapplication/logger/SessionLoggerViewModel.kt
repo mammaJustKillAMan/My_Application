@@ -27,6 +27,11 @@ class SessionLoggerViewModel(
         }
     }
 
+    /**
+     * Stops the currently running session and cancels location collection.
+     *
+     * If no session is active, this function does nothing.
+     */
     fun stopSession() {
         isLogging = false
         locationJob?.cancel()
