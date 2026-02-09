@@ -63,6 +63,10 @@ fun MainScreen(
     val altitudeState by altitudeViewModel.state.collectAsState()
     val riskLevel = altitudeState.riskLevel
     val authState by authViewModel.authState.collectAsState()
+
+    // Explicitly Typed State to prevent inference errors
+    val trackingState: TrackingState by trackingViewModel.state.collectAsState()
+
     val scrollState = rememberScrollState()
 
     val riskColor = when(riskLevel) {
