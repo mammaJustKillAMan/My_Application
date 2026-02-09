@@ -4,6 +4,13 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import com.example.myapplication.altitude.Symptom
 
+/**
+ * ViewModel managing the state of symptoms during a hiking session.
+ *
+ * Tracks which symptoms are currently checked and allows toggling or resetting them.
+ *
+ * @property symptoms A list of [Symptom]s monitored in the current session.
+ */
 class SessionStateViewModel : ViewModel() {
 
     // Symptoms shared across the session
