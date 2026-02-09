@@ -12,6 +12,23 @@ object AltitudeRiskCalculator {
     private const val WARNING_ASCENT = 8.0   // m/min
     private const val DANGEROUS_ASCENT = 15.0 // m/min
 
+    /**
+     * Calculates the altitude sickness risk level.
+     *
+     * The risk score is computed from:
+     * - Vertical ascent rate (meters per minute)
+     * - Presence and severity of reported symptoms
+     *
+     * Descent provides a slow risk reduction but does not immediately
+     * negate symptom-based risk. Certain severe symptoms override the
+     * calculated score.
+     *
+     * @param ascentRate Current ascent rate in meters per minute.
+     * Positive values indicate ascent, negative values indicate descent.
+     * @param symptoms List of symptoms contributing to risk evaluation.
+     *
+     * @return The computed [RiskLevel].
+     */
     fun calculateRisk(ascentRate: Double, symptoms: List<Symptom>): RiskLevel {
         var riskScore = 0.0
 
