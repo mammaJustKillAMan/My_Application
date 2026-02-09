@@ -31,6 +31,7 @@ fun RootNavGraph(
     sessionStateViewModel: SessionStateViewModel,
     loggerViewModel: SessionLoggerViewModel
 ) {
+    // THIS IS THE ONLY NAVHOST IN THE ENTIRE APP
     NavHost(
         navController = navController,
         startDestination = RootScreen.Auth.route
