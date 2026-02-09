@@ -60,6 +60,7 @@ fun MainScreen(
     navController: NavHostController,
     trackingViewModel: TrackingViewModel
 ) {
+    val context = LocalContext.current
     val altitudeState by altitudeViewModel.state.collectAsState()
     val riskLevel = altitudeState.riskLevel
     val authState by authViewModel.authState.collectAsState()
