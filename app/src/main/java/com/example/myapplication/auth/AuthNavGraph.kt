@@ -9,7 +9,10 @@ import androidx.navigation.compose.composable
  * Represents the available authentication-related screens with their
  * corresponding navigation routes.
  *
- * @property route The identifier used by the navigation graph.
+ * Each screen defines a unique route used within the authentication
+ * navigation graph.
+ *
+ * @property route Navigation route associated with the screen.
  */
 sealed class AuthScreen(val route: String) {
     object Login : AuthScreen("login")
