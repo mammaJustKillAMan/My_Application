@@ -6,8 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 
 /**
- * Represents the available authentication-related screens with their
- * corresponding navigation routes.
+ * Represents authentication-related navigation destinations.
  *
  * Each screen defines a unique route used within the authentication
  * navigation graph.
