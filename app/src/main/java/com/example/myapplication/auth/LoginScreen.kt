@@ -76,8 +76,6 @@ fun LoginScreen(
             Text("Log In")
         }
 
-        Spacer(Modifier.height(16.dp))
-
         TextButton(
             onClick = {
                 if (email.isNotBlank()) {
