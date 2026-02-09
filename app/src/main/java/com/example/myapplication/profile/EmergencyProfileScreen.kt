@@ -46,10 +46,49 @@ fun EmergencyProfileScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(24.dp)
+            .padding(16.dp)
     ) {
-        Text("Emergency Contact", style = MaterialTheme.typography.headlineMedium)
-        Spacer(Modifier.height(24.dp))
+        // --- Top Header (Back Arrow + Title) ---
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            IconButton(
+                onClick = onBackClick,
+                modifier = Modifier
+                    .size(40.dp)
+                    .background(MaterialTheme.colorScheme.primaryContainer, CircleShape)
+            ) {
+                Icon(
+                    imageVector = Icons.Default.ArrowBack,
+                    contentDescription = "Back",
+                    tint = MaterialTheme.colorScheme.onPrimaryContainer
+                )
+            }
+
+            Spacer(Modifier.width(16.dp))
+
+            Text(
+                "Emergency Contact",
+                style = MaterialTheme.typography.headlineSmall
+            )
+        }
+
+        // --- Centered Content ---
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .weight(1f), // Takes up remaining space
+            verticalArrangement = Arrangement.Center, // Centers content vertically
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                "Edit Information",
+                style = MaterialTheme.typography.titleMedium,
+                color = MaterialTheme.colorScheme.secondary
+            )
+
+            Spacer(Modifier.height(24.dp))
 
         OutlinedTextField(
             value = name,
