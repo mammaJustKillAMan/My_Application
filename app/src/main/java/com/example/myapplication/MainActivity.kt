@@ -79,9 +79,8 @@ class MainActivity : ComponentActivity() {
                         )
                     }
 
-                //launcher for runtime permission request
-                val locationPermissionLauncher =
-                    rememberLauncherForActivityResult(
+                    // Permission Launcher
+                    val permissionLauncher = rememberLauncherForActivityResult(
                         ActivityResultContracts.RequestPermission()
                     ) { granted ->
                         hasLocationPermission = granted
