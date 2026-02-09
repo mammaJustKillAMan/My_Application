@@ -34,7 +34,7 @@ fun RootNavGraph(
     // THIS IS THE ONLY NAVHOST IN THE ENTIRE APP
     NavHost(
         navController = navController,
-        startDestination = RootScreen.Auth.route
+        startDestination = "auth_graph_route" // Matches route in AuthNavGraph
     ) {
 
         composable(RootScreen.Auth.route) {
