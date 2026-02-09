@@ -47,15 +47,13 @@ fun RootNavGraph(
             }
         )
 
-        composable(RootScreen.Main.route) {
-            MainNavGraph(
-                navController = navController,
-                authViewModel = authViewModel,
-                altitudeViewModel = altitudeViewModel,
-                sessionStateViewModel = sessionStateViewModel,
-                loggerViewModel = loggerViewModel
-            )
-        }
-
+        // 2. Add Main Graph (Extension function)
+        mainNavGraph(
+            navController = navController,
+            authViewModel = authViewModel,
+            altitudeViewModel = altitudeViewModel,
+            sessionStateViewModel = sessionStateViewModel,
+            loggerViewModel = loggerViewModel
+        )
     }
 }
