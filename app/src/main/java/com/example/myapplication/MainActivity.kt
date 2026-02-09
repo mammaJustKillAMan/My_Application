@@ -21,6 +21,7 @@ import com.example.myapplication.logger.SessionLoggerViewModel
 import com.example.myapplication.navigation.RootNavGraph
 import com.example.myapplication.session.SessionStateViewModel
 import com.example.myapplication.ui.theme.MyApplicationTheme
+import com.example.myapplication.logger.AppViewModelFactory
 
 class MainActivity : ComponentActivity() {
 
