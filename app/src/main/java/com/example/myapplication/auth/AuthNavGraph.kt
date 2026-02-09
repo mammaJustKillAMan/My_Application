@@ -28,9 +28,8 @@ sealed class AuthScreen(val route: String) {
  * @param onAuthSuccess Callback executed when the user successfully logs in
  * or registers.
  */
-@Composable
-fun AuthNavGraph(
-    navController: NavHostController,
+fun NavGraphBuilder.authNavGraph(
+    navController: NavController,
     viewModel: AuthViewModel,
     onAuthSuccess: () -> Unit
 ) {
