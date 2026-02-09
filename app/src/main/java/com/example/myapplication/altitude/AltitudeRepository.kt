@@ -30,8 +30,25 @@ class AltitudeRepository(context: Context) {
      */
     private val client = LocationServices.getFusedLocationProviderClient(context.applicationContext)
 
-    private val fusedLocationClient: FusedLocationProviderClient =
-        LocationServices.getFusedLocationProviderClient(context)
+    /**
+     * Returns a flow that emits location updates at a fixed interval.
+     *
+     * The flow requests high-accuracy location updates and emits the latest
+     * available [Location] whenever it changes. Updates are automatically
+     * stopped when the flow collection is cancelled.
+     *
+     * Callers must ensure that location permissions have already been granted before collecting this flow.
+     *
+     * @param intervalMillis Desired interval between location updates in milliseconds.
+     * Defaults to 5000 ms.
+     *
+     * @return A cold [Flow] emitting [Location] updates.
+     */
+    @SuppressLint("MissingPermission")
+    fun getLocationUpdates(intervalMillis: Long = 5000): Flow<Location> = callbackFlow {
+        val request = LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, intervalMillis)
+            .setMinUpdateDistanceMeters(5f)
+            .build()
 
         /**
          * Callback receiving location results from the fused location provider.
