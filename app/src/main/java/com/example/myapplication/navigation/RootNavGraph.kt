@@ -36,18 +36,16 @@ fun RootNavGraph(
         navController = navController,
         startDestination = "auth_graph_route" // Matches route in AuthNavGraph
     ) {
-
-        composable(RootScreen.Auth.route) {
-            AuthNavGraph(
-                navController = navController,
-                viewModel = authViewModel,
-                onAuthSuccess = {
-                    navController.navigate(RootScreen.Main.route){
-                        popUpTo(RootScreen.Auth.route) { inclusive = true }
-                    }
+        // 1. Add Auth Graph (Extension function)
+        authNavGraph(
+            navController = navController,
+            viewModel = authViewModel,
+            onAuthSuccess = {
+                navController.navigate(RootScreen.Main.route) {
+                    popUpTo("auth_graph_route") { inclusive = true }
                 }
-            )
-        }
+            }
+        )
 
         composable(RootScreen.Main.route) {
             MainNavGraph(
