@@ -9,6 +9,9 @@ data class Symptom(
 object AltitudeRiskCalculator {
 
     private const val SAFE_ASCENT = 3.0      // m/min
+    /**
+     * Ascent rate where AMS risk begins to increase noticeably.
+     */
     private const val WARNING_ASCENT = 8.0   // m/min
     /**
      * Ascent rate considered dangerous and strongly associated with AMS.
