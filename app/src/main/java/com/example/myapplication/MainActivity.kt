@@ -101,7 +101,7 @@ class MainActivity : ComponentActivity() {
                         )
                     } else {
                         PermissionRequiredScreen {
-                            locationPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
+                            permissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
                         }
                     }
                 }
