@@ -29,44 +29,42 @@ fun EmergencyCallScreen(
     val context = LocalContext.current
     var confirmNumber by remember { mutableStateOf<String?>(null) }
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp)
-    ) {
-        // Back button
-        IconButton(
-            onClick = onBackClick,
-            modifier = Modifier
-                .size(40.dp)
-                .background(MaterialTheme.colorScheme.primaryContainer, CircleShape)
-        ) {
-            Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text("Emergency Calls") },
+                navigationIcon = {
+                    IconButton(onClick = onBackClick) {
+                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                    }
+                }
+            )
         }
-
-        Spacer(Modifier.height(32.dp))
-
-        Box(
-            modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
+    ) { padding ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(padding)
+                .padding(24.dp),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-
-                // Emergency Services button (red)
-                EmergencyButton(
-                    text = "CALL EMERGENCY SERVICES",
-                    color = MaterialTheme.colorScheme.error,
-                    onClick = { confirmNumber = "112" }
-                )
-
-                // User's emergency contact (yellow) if logged in
-                if (isLoggedIn && !emergencyContact.isNullOrBlank()) {
-                    Spacer(Modifier.height(24.dp))
-                    EmergencyButton(
-                        text = "CALL PERSONAL CONTACT",
-                        color = Color(0xFFFFC107),
-                        onClick = { confirmNumber = emergencyContact }
-                    )
+            // --- EMERGENCY SERVICES BUTTON ---
+            Button(
+                onClick = {
+                    val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:112"))
+                    context.startActivity(intent)
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(200.dp), // Large height for big text
+                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error),
+                shape = MaterialTheme.shapes.large
+            ) {
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text("CALL", fontSize = 32.sp, fontWeight = FontWeight.Black)
+                    Text("EMERGENCY", fontSize = 32.sp, fontWeight = FontWeight.Black)
+                    Text("SERVICES", fontSize = 32.sp, fontWeight = FontWeight.Black)
                 }
             }
         }
