@@ -48,6 +48,12 @@ object AltitudeRiskCalculator {
     }
 }
 
+/**
+ * Discrete altitude sickness risk levels.
+ *
+ * Used to communicate the severity of Acute Mountain Sickness (AMS)
+ * risk to the user.
+ */
 enum class RiskLevel {
     LOW, MODERATE, HIGH
 }
