@@ -20,8 +20,27 @@ import com.example.myapplication.medical.MedicalGuideScreen
 import com.example.myapplication.medical.SymptomsChecklistScreen
 import com.example.myapplication.session.SessionStateViewModel
 
-@Composable
-fun MainNavGraph(
+/**
+ * Defines the main navigation graph for authenticated users.
+ *
+ * Includes all primary screens within the app after login, such as:
+ * - Home / Dashboard ([MainScreen])
+ * - Emergency Profile ([EmergencyProfileScreen])
+ * - Symptoms Checklist ([SymptomsChecklistScreen])
+ * - Medical Guide ([MedicalGuideScreen])
+ * - Emergency Calls ([EmergencyCallScreen])
+ * - Previous Hikes ([PreviousHikesScreen])
+ * - Hike Detail ([HikeDetailScreen])
+ *
+ * This graph is a sub-graph under [RootScreen.Main.route].
+ *
+ * @param navController The [NavHostController] used for navigation between screens.
+ * @param authViewModel The [AuthViewModel] providing authentication state.
+ * @param sessionStateViewModel The [SessionStateViewModel] managing symptoms and session state.
+ * @param altitudeViewModel The [AltitudeViewModel] providing altitude and risk data.
+ * @param loggerViewModel The [SessionLoggerViewModel] used for logging hiking sessions.
+ */
+fun NavGraphBuilder.mainNavGraph(
     navController: NavHostController,
     authViewModel: AuthViewModel,
     sessionStateViewModel: SessionStateViewModel,
