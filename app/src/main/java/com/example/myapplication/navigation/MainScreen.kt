@@ -78,9 +78,12 @@ fun MainScreen(
         altitudeViewModel.updateRisk(checkedNames)
     }
 
-    val riskColor = when(riskLevel) {
-        RiskLevel.LOW -> MaterialTheme.colorScheme.tertiaryContainer
-        RiskLevel.MODERATE -> MaterialTheme.colorScheme.secondaryContainer
+    val riskLevel = altitudeState.riskLevel
+
+    // 2. Risk Theme Colors
+    val riskColor = when (riskLevel) {
+        RiskLevel.LOW -> MaterialTheme.colorScheme.secondaryContainer
+        RiskLevel.MODERATE -> MaterialTheme.colorScheme.tertiaryContainer
         RiskLevel.HIGH -> MaterialTheme.colorScheme.errorContainer
     }
 
