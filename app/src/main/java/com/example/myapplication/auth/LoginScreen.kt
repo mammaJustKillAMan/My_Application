@@ -12,9 +12,16 @@ import androidx.compose.ui.unit.dp
 /**
  * Login screen allowing users to authenticate using email and password.
  *
- * @param onRegisterClick Callback triggered when the user wants to go to the registration screen.
- * @param onLoginSuccess Callback called when login succeeds.
- * @param viewModel AuthViewModel providing login logic and state.
+ * Displays input fields for credentials, handles login actions,
+ * provides navigation to registration, supports password reset,
+ * and reacts to authentication state changes emitted by [AuthViewModel].
+ *
+ * @param onRegisterClick Callback triggered when the user chooses
+ * to navigate to the registration screen.
+ * @param onLoginSuccess Callback invoked when authentication succeeds.
+ * @param viewModel ViewModel providing authentication logic and state.
+ * @param onGuestClick Callback triggered when the user chooses
+ * to continue without authentication.
  */
 @Composable
 fun LoginScreen(
