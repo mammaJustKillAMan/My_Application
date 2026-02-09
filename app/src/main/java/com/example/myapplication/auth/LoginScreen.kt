@@ -27,7 +27,8 @@ import androidx.compose.ui.unit.dp
 fun LoginScreen(
     onRegisterClick: () -> Unit,
     onLoginSuccess: () -> Unit,
-    viewModel: AuthViewModel
+    viewModel: AuthViewModel,
+    onGuestClick: () -> Unit
 ){
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
