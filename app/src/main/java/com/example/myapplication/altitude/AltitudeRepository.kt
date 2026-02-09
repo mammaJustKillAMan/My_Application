@@ -33,13 +33,14 @@ class AltitudeRepository(context: Context) {
     private val fusedLocationClient: FusedLocationProviderClient =
         LocationServices.getFusedLocationProviderClient(context)
 
-    @SuppressLint("MissingPermission") // Permissions handled elsewhere
-    suspend fun getCurrentAltitude(): Double? {
-        return try {
-            val location = fusedLocationClient.lastLocation.await()
-            location?.altitude
-        } catch (e: Exception) {
-            null
+        /**
+         * Callback receiving location results from the fused location provider.
+         * Emits the most recent location into the flow.
+         */
+        val callback = object : LocationCallback() {
+            override fun onLocationResult(result: LocationResult) {
+                result.lastLocation?.let { trySend(it) }
+            }
         }
     }
 }
