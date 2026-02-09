@@ -45,8 +45,8 @@ fun MedicalGuideScreen(
     }
 
     val riskTextColor = when (riskLevel) {
-        RiskLevel.LOW -> MaterialTheme.colorScheme.onTertiaryContainer
-        RiskLevel.MODERATE -> MaterialTheme.colorScheme.onSecondaryContainer
+        RiskLevel.LOW -> MaterialTheme.colorScheme.onSecondaryContainer
+        RiskLevel.MODERATE -> MaterialTheme.colorScheme.onTertiaryContainer
         RiskLevel.HIGH -> MaterialTheme.colorScheme.onErrorContainer
     }
 
